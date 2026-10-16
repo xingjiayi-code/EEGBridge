@@ -1,0 +1,39 @@
+# CMake build directories
+/build/
+/build-*/
+/cmake-build-*/
+/out/
+
+# Local installation output
+/install/
+
+# CMake-generated files (including in-source builds)
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+install_manifest.txt
+CTestTestfile.cmake
+Testing/
+compile_commands.json
+CMakeUserPresets.json
+/Makefile
+/build.ninja
+/.ninja_deps
+/.ninja_log
+/include/EEGBridge_export.h
+/EEGBridgeConfig.cmake
+/EEGBridgeConfigVersion.cmake
+
+# IDE settings and local state
+.idea/
+.vs/
+*.user
+*.suo
+
+# Editor backups and OS metadata
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+Desktop.ini
