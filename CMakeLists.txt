@@ -6,6 +6,7 @@ project(EEGBridge VERSION 1.0.0 LANGUAGES CXX)
 
 #设置动态库/静态库可选
 option(BUILD_SHARED_LIBS "Build shared libraries" ON)
+option(EEGBRIDGE_BUILD_EXAMPLES "Build EEGBridge examples" ${PROJECT_IS_TOP_LEVEL})
 
 #仅在项目顶层设置默认安装路径，避免作为子模块时污染外部主项目
 if (PROJECT_IS_TOP_LEVEL AND CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
@@ -59,6 +60,10 @@ target_include_directories(EEGBridge PUBLIC
 include(${CMAKE_CURRENT_LIST_DIR}/third_party/ixwebsocket/findIXWS.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/third_party/nlohmannJson/findNlohmann.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/third_party/liblsl/findLSL.cmake)
+
+if (EEGBRIDGE_BUILD_EXAMPLES)
+    add_subdirectory(example)
+endif ()
 
 #==================== 3. 独立发布模式专属配置 ====================
 #【关键机关 3】只有当你单独编译这个库时，才需要安装头文件和生成 find_package 配置文件
