@@ -25,8 +25,12 @@ add_library(EEGBridge ${EEGBRIDGE_SOURCES})
 #保证 add_subdirectory 和 find_package 两种模式下，主项目链接的名字完全一致！
 add_library(EEGBridge::EEGBridge ALIAS EEGBridge)
 
+target_compile_features(EEGBridge PUBLIC cxx_std_20)
+
 set_target_properties(EEGBridge PROPERTIES
         DEBUG_POSTFIX d
+        CXX_STANDARD_REQUIRED ON
+        CXX_EXTENSIONS OFF
 )
 
 #====================2.生成导入/导出文件===================
