@@ -15,3 +15,6 @@ set_target_properties(EEGBridge PROPERTIES
 
 add_executable(EEGBridgeExample main.cpp)
 target_link_libraries(EEGBridgeExample PRIVATE EEGBridge::EEGBridge)
+
+add_executable(EEGBridgeLslExample lsl_main.cpp)
+target_link_libraries(EEGBridgeLslExample PRIVATE EEGBridge::EEGBridge)
